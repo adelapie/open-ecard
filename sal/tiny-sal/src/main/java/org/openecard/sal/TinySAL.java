@@ -357,7 +357,7 @@ public class TinySAL implements SAL {
 	    if (applicationID == null) {
 		applicationID = cardStateEntry.getImplicitlySelectedApplicationIdentifier();
 	    }
-	    //Assert.securityConditionApplication(cardStateEntry, applicationID, ConnectionServiceActionName.CARD_APPLICATION_CONNECT);
+	    Assert.securityConditionApplication(cardStateEntry, applicationID, ConnectionServiceActionName.CARD_APPLICATION_CONNECT);
 
 	    // Connect to the card
 	    CardApplicationPathType cardApplicationPath = cardStateEntry.pathCopy();
