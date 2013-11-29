@@ -148,10 +148,10 @@ import static org.testng.Assert.*;
  */
 public class TinySALTest {
 
-    //@BeforeClass
-    //public static void disable() {
-    //    throw new SkipException("Test completely disabled.");
-    //}
+    @BeforeClass
+    public static void disable() {
+        throw new SkipException("Test completely disabled.");
+    }
 
     private static ClientEnv env;
     private static TinySAL instance;
@@ -208,20 +208,6 @@ public class TinySALTest {
 	assertTrue(cHandles.size() == 1);
 	assertEquals(cHandles.get(0).getIFDName(), readers[1]);
     }
-
-    /**
-     * Test card recognition.
-     */
-    @Test
-    public void testRecognition() {
-	System.out.println("card recognition");
-	
-	ListIFDsResponse result = instance.performRecognition();
-	assertEquals(ECardConstants.Major.OK, result.getResult().getResultMajor());
-
-	instance.selectIFD(0, new BigInteger("0"));
-    }
-
 
     /**
      * Test of initialize method, of class TinySAL.
